@@ -3,7 +3,6 @@ package br.com.cadastro_pessoas_api.service;
 import br.com.cadastro_pessoas_api.dto.LegalPersonResponseDTO;
 import br.com.cadastro_pessoas_api.dto.NaturalPersonResponseDTO;
 import br.com.cadastro_pessoas_api.dto.PersonRequestDTO;
-import br.com.cadastro_pessoas_api.dto.PersonResponseDTO;
 import br.com.cadastro_pessoas_api.model.LegalPerson;
 import br.com.cadastro_pessoas_api.model.NaturalPerson;
 import br.com.cadastro_pessoas_api.model.Person;
