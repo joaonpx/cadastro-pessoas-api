@@ -1,0 +1,21 @@
+CREATE TABLE TBL_PERSONS
+(
+    id          BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name        VARCHAR(255) NOT NULL,
+    person_type VARCHAR(2)   NOT NULL CHECK (person_type IN ('PF', 'PJ'))
+);
+
+CREATE TABLE TBL_NATURAL_PERSONS
+(
+    person_id     BIGINT PRIMARY KEY,
+    cpf           VARCHAR(14) NOT NULL UNIQUE,
+    date_of_birth DATE        NOT NULL,
+    FOREIGN KEY (person_id) REFERENCES TBL_PERSONS (id)
+);
+
+CREATE TABLE TBL_LEGAL_PERSONS
+(
+    person_id BIGINT PRIMARY KEY,
+    cnpj      VARCHAR(18) NOT NULL UNIQUE,
+    FOREIGN KEY (person_id) REFERENCES TBL_PERSONS (id)
+);
