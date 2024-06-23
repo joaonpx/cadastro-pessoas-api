@@ -7,6 +7,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDate;
 
@@ -14,6 +15,7 @@ import java.time.LocalDate;
 @Table(name = "TBL_NATURAL_PERSONS")
 @Getter
 @Setter
+@ToString
 @PrimaryKeyJoinColumn(name = "person_id")
 @NoArgsConstructor
 public class NaturalPerson extends Person {
