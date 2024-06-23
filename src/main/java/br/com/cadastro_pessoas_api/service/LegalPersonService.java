@@ -21,14 +21,20 @@ public class LegalPersonService {
   }
 
   public LegalPerson findById(Long id) {
-    return legalPersonRepository.findById(id).orElseThrow(() -> new RuntimeException("Pessoa Jurídica não encontrada com o ID: " + id));
+    return legalPersonRepository.findById(id).orElseThrow(() -> new RuntimeException("Pessoa jurídica não encontrada."));
+  }
+
+  public LegalPerson findByName(String name) {
+    return legalPersonRepository.findByName(name).orElseThrow(() -> new RuntimeException("Pessoa jurídica não encontrada."));
+  }
+
+  public LegalPerson findByCnpj(String cnpj) {
+    return legalPersonRepository.findByCnpj(cnpj).orElseThrow(() -> new RuntimeException("Pessoa física não encontrada."));
   }
 
   private LegalPerson convertToLegalPerson(PersonRequestDTO personRequestDTO) {
     LegalPerson legalPerson = new LegalPerson();
     BeanUtils.copyProperties(personRequestDTO, legalPerson);
-
-    legalPerson.setCnpj(personRequestDTO.cnpj());
 
     return legalPerson;
   }
