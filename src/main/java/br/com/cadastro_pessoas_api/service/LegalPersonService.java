@@ -1,6 +1,5 @@
 package br.com.cadastro_pessoas_api.service;
 
-import br.com.cadastro_pessoas_api.dto.LegalPersonRequestDTO;
 import br.com.cadastro_pessoas_api.dto.PersonRequestDTO;
 import br.com.cadastro_pessoas_api.model.LegalPerson;
 import br.com.cadastro_pessoas_api.repository.LegalPersonRepository;

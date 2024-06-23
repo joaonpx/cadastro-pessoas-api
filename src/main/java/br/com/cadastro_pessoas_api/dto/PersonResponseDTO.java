@@ -5,7 +5,4 @@ public record PersonResponseDTO(
         String name,
         String type
 ) {
-    public PersonResponseDTO(PersonRequestDTO personRequestDTO) {
-        this(personRequestDTO.id(), personRequestDTO.name(), personRequestDTO.type());
-    }
 }

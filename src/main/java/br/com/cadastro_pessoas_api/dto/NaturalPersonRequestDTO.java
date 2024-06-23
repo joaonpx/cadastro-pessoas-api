@@ -22,7 +22,4 @@ public record NaturalPersonRequestDTO(
         @Past(message = "A data de nascimento deve estar no passado!")
         LocalDate dateOfBirth
 ) {
-    public NaturalPersonRequestDTO(NaturalPerson naturalPerson) {
-        this(naturalPerson.getName() ,naturalPerson.getType(), naturalPerson.getCpf(), naturalPerson.getDateOfBirth());
-    }
 }
