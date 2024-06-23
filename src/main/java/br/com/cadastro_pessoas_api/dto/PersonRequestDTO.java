@@ -5,8 +5,6 @@ import jakarta.validation.constraints.*;
 import java.time.LocalDate;
 
 public record PersonRequestDTO(
-        Long id,
-
         @NotNull(message = "Nome é obrigatório!")
         String name,
 
@@ -18,19 +16,19 @@ public record PersonRequestDTO(
         LocalDate dateOfBirth,
         String cnpj
 ) {
-    public boolean isValid() {
-        if (type.equalsIgnoreCase("PF")) {
-            return cpf != null
-                    && dateOfBirth != null
-                    && !cpf.isEmpty()
-                    && !dateOfBirth.toString().isEmpty()
-                    && cnpj == null;
-        } else if (type.equalsIgnoreCase("PJ")) {
-            return cpf == null
-                    && dateOfBirth == null
-                    && cnpj != null
-                    && !cnpj.isEmpty();
-        }
-        return false;
+  public boolean isValid() {
+    if (type.equalsIgnoreCase("PF")) {
+      return cpf != null
+              && dateOfBirth != null
+              && !cpf.isEmpty()
+              && !dateOfBirth.toString().isEmpty()
+              && cnpj == null;
+    } else if (type.equalsIgnoreCase("PJ")) {
+      return cpf == null
+              && dateOfBirth == null
+              && cnpj != null
+              && !cnpj.isEmpty();
     }
+    return false;
+  }
 }
